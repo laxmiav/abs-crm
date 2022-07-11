@@ -5,13 +5,10 @@
 
 ### <div align="center">ABS CRM is the Service Client Management tool developed by using SYMFONY 5.4, We are  👨‍💻 working freelance remotely since 2022 🚀 for ABS, india. </div>  
   
-
 <br/>  
-
 
 ## My Skill Set  
 <table><tr><td valign="top" width="33%">
-
 
 
 ### Frontend  
@@ -53,6 +50,9 @@
 <a href="https://github.com/jayvues" target="_blank">
 <img src=https://img.shields.io/badge/github-%2324292e.svg?&style=for-the-badge&logo=github&logoColor=white alt=github style="margin-bottom: 5px;" />
 </a>  
+<a href="https://github.com/laxmiav" target="_blank">
+<img src=https://img.shields.io/badge/github-%2324292e.svg?&style=for-the-badge&logo=github&logoColor=white alt=github style="margin-bottom: 5px;" />
+</a>  
 </div>  
   
 
@@ -65,16 +65,5 @@
 <img src="https://komarev.com/ghpvc/?username=jayvues&&style=flat-square" align="center" />
 </div>  
   
-
-<br/>  
-
-<div align="center">
-            <a href="https://www.buymeacoffee.com/jayvues" target="_blank" style="display: inline-block;">
-                <img
-                    src="https://img.shields.io/badge/Donate-Buy%20Me%20A%20Coffee-orange.svg?style=flat-square" 
-                    align="center"
-                />
-            </a></div>
-<br />
 
 
