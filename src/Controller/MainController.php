@@ -29,6 +29,17 @@ public function myservices(ServiceRepository $serviceRepository): Response
    ]);
 }
 
+/**
+* @Route("/homepage", name="homepage", methods={"GET"})
+*/
+public function homepage(ServiceRepository $serviceRepository): Response
+{
+
+      
+       return $this->render('main/home.html.twig', [
+       'services' => $serviceRepository->findAll(),
+   ]);
+}
 
 
 }

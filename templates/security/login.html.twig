@@ -5,10 +5,10 @@
 {% block body %}
 
 
-<main class="flex items-center justify-center m-10">
+<main class="flex items-center justify-around m-10">
 
-<img class="hidden sm:block" src="{{asset('login.jpg')}}">
-<div class="text-center p-6 flex flex-row">
+<img class="hidden sm:block w-1/3" src="{{asset('login.jpg')}}">
+<div class="text-center p-10 flex flex-row">
 <form method="post">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
