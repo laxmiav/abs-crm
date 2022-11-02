@@ -25,7 +25,7 @@ public function myservices(ServiceRepository $serviceRepository): Response
        $user = $this->get('security.token_storage')->getToken()->getUser();
        $id = $user->getId();
        return $this->render('main/services.html.twig', [
-       'services' => $serviceRepository->findMyServices($id),
+       'services' => $serviceRepository->findServicesByUser($id),
    ]);
 }
 
@@ -34,10 +34,10 @@ public function myservices(ServiceRepository $serviceRepository): Response
 */
 public function homepage(ServiceRepository $serviceRepository): Response
 {
-
+        $TODO = "TODO";
       
        return $this->render('main/home.html.twig', [
-       'services' => $serviceRepository->findAll(),
+       'services' => $serviceRepository->findServicesByStatus($TODO),
    ]);
 }
 

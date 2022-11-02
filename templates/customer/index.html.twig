@@ -3,7 +3,11 @@
 {% block title %}Customer index{% endblock %}
 
 {% block body %}
-    <h1>Customer index</h1>
+    
+     <div class="p-10"> 
+   <h1 class="text text-2xl m-2">Customer index</h1> 
+    <a class="border border-2 p-2 m-2 bg-green" href="{{ path('app_customer_new') }}">Create new</a>
+   </div>
 
     <table class="responstable">
         <thead>
@@ -37,6 +41,6 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_customer_new') }}">Create new</a>
+    
     
 {% endblock %}

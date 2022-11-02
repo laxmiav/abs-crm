@@ -96,6 +96,22 @@ public function findServicesByCustomer($customerid)
      
        
    }
+   public function findServicesByStatus($TODO)
+   {
+
+    $entityManager = $this->getEntityManager();
+    $query = $entityManager->createQuery(
+        'SELECT s
+        FROM App\Entity\Service s
+        JOIN s.user u
+        WHERE s.service_status = :todo'
+    )
+     ->setParameter('todo',$TODO);
+
+     return $query->getResult();
+     
+       
+   }
 
    
 
