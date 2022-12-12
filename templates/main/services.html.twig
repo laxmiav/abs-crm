@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Service index{% endblock %}
+
+{% block body %}
+    <h1>Service index</h1>
+
+    <table class="responstable">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Service_id</th>
+                <th>Created_at</th>
+                <th>Customer</th>
+                <th>Sales</th>
+                <th>User</th>
+                <th>Problem</th>
+                <th>Service_status</th>
+                <th>TypeOfPending</th>
+                <th>Remarks</th>
+                <th>ClosingAt</th>
+                <th>FSR_id</th>
+                <th>Invoice_id</th>
+                <th>Amount</th>
+                <th>Invoice_status</th>
+                <th>Category</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for service in services %}
+            <tr>
+                <td>{{ service.id }}</td>
+                <td>{{ service.serviceId }}</td>
+                <td>{{ service.createdAt ? service.createdAt|date('Y-m-d') : '' }}</td>
+                <td>{% for customer in service.customer %}
+                {{ customer.name ?? '' }}
+                {% endfor %}</td>
+               <td> {% for sales in service.sales %}
+                {{ sales.name ?? ''}}
+                {% endfor %}</td>
+                <td>{% for user in service.user %}
+                {{ user.fullname ?? ''}}
+                {% endfor %}</td>
+                <td>{{ service.problem }}</td>
+                <td>{{ service.serviceStatus }}</td>
+                <td>{{ service.typeOfPending }}</td>
+                <td>{{ service.remarks }}</td>
+                <td>{{ service.closingAt ? service.closingAt|date('Y-m-d') : '' }}</td>
+                <td>{{ service.FSRId }}</td>
+                <td>{{ service.invoiceId }}</td>
+                <td>{{ service.amount }}</td>
+                <td>{{ service.invoiceStatus }}</td>
+                <td>{{ service.category }}</td>
+                <td>
+                    <a href="{{ path('app_service_show', {'id': service.id}) }}">show</a>
+                    <a href="{{ path('app_service_edit', {'id': service.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="14">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_service_new') }}">Create new</a>
+{% endblock %}

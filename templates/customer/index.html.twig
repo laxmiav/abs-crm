@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Customer index{% endblock %}
+
+{% block body %}
+    
+     <div class="p-10"> 
+   <h1 class="text text-2xl m-2">Customer index</h1> 
+    <a class="border border-2 p-2 m-2 bg-green" href="{{ path('app_customer_new') }}">Create new</a>
+   </div>
+
+    <table class="responstable">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>CreatedAt</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for customer in customers %}
+            <tr>
+                <td>{{ customer.id }}</td>
+                <td>{{ customer.name }}</td>
+                <td>{{ customer.location }}</td>
+                <td>{{ customer.createdAt ? customer.createdAt|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_customer_show', {'id': customer.id}) }}" class="button button1">show</a>
+                    <a href="{{ path('app_customer_edit', {'id': customer.id}) }}" class="button button1">edit</a>
+                    <a href="{{ path('customer_sales', {'id': customer.id}) }}" class="button button1">sales details</a>
+                    <a href="{{ path('service_customer', {'id': customer.id}) }}" class="button button1">service details</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">n-No records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+    
+{% endblock %}

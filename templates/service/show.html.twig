@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Service{% endblock %}
+
+{% block body %}
+    <h1 class="text text-2xl m-2">Service</h1>
+
+    <table class="responstable">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ service.id }}</td>
+            </tr>
+            <tr>
+                <th>Service_id</th>
+                <td>{{ service.serviceId }}</td>
+            </tr>
+            <tr>
+                <th>Created_at</th>
+                <td>{{ service.createdAt ? service.createdAt|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Problem</th>
+                <td>{{ service.problem }}</td>
+            </tr>
+            <tr>
+                <th>Service_status</th>
+                <td>{{ service.serviceStatus }}</td>
+            </tr>
+            <tr>
+                <th>TypeOfPending</th>
+                <td>{{ service.typeOfPending }}</td>
+            </tr>
+            <tr>
+                <th>Remarks</th>
+                <td>{{ service.remarks }}</td>
+            </tr>
+            <tr>
+                <th>ClosingAt</th>
+                <td>{{ service.closingAt ? service.closingAt|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>FSR_id</th>
+                <td>{{ service.FSRId }}</td>
+            </tr>
+            <tr>
+                <th>Invoice_id</th>
+                <td>{{ service.invoiceId }}</td>
+            </tr>
+            <tr>
+                <th>Amount</th>
+                <td>{{ service.amount }}</td>
+            </tr>
+            <tr>
+                <th>Invoice_status</th>
+                <td>{{ service.invoiceStatus }}</td>
+            </tr>
+            <tr>
+                <th>Category</th>
+                <td>{{ service.category }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_service_index') }}" class="text text-2xl m-2">back to list</a>
+
+    <a href="{{ path('app_service_edit', {'id': service.id}) }}" class="text text-2xl m-2">edit</a>
+
+    {{ include('service/_delete_form.html.twig') }}
+{% endblock %}

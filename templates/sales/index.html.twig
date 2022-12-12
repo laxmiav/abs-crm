@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sales index{% endblock %}
+
+{% block body %}
+   
+    
+     <div class="p-10"> 
+   <h1 class="text text-2xl m-2">Sales index</h1> 
+    <a class="border border-2 p-2 m-2 bg-green" href="{{ path('app_sales_new') }}">Create new</a>
+   </div>
+
+    <table class="responstable">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>CreatedAt</th>
+                <th>Warenty</th>
+                <th>Details</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for sale in sales %}
+            <tr>
+                <td>{{ sale.id }}</td>
+                <td>{{ sale.name }}</td>
+                <td>{{ sale.createdAt ? sale.createdAt|date('Y-m-d') : '' }}</td>
+                <td>{{ sale.warenty ? sale.warenty|date('Y-m-d') : '' }}</td>
+                <td>{{ sale.details }}</td>
+                <td>
+                    <a href="{{ path('app_sales_show', {'id': sale.id}) }}">show</a>
+                    <a href="{{ path('app_sales_edit', {'id': sale.id}) }}">edit</a>
+                    <a href="{{ path('service_by_sales', {'id': sale.id}) }}">New Service</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}
